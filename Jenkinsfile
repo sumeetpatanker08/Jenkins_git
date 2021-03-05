@@ -14,6 +14,16 @@ pipeline {
                 bat 'python Code.py'
             }
         }
+        stage('Build Image'){
+            steps {
+                bat 'docker build -t firstapp:v1 .'
+            }
+        }
+        stage('Run Image'){
+            steps {
+                bat 'docker run -d firstapp:v1'
+            }
+        }
     }
 }
 
