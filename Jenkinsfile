@@ -19,9 +19,18 @@ pipeline {
                 bat 'docker build -t firstapp:v1 .'
             }
         }
+        /*
         stage('Run Image'){
             steps {
                 bat 'docker run -d -p 5000:5000 firstapp:v1'
+            }
+        }
+        */
+        stage('Push Image'){
+            steps {
+                bat 'docker login'
+                bat 'docker tag firstapp:v1 sumeetpatanker08/helloworld:v1'
+                bat 'docker push sumeetpatanker08/helloworld:v1'
             }
         }
     }
