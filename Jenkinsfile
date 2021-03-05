@@ -28,7 +28,7 @@ pipeline {
         */
         stage('Push Image'){
             steps {
-                bat 'docker login'
+                bat 'docker login --username=sumeetpatanker08 --password=4WH66LDRIVe'
                 bat 'docker tag firstapp:v1 sumeetpatanker08/helloworld:v1'
                 bat 'docker push sumeetpatanker08/helloworld:v1'
             }
