@@ -11,7 +11,7 @@ pipeline {
         stage('Build'){
             steps {
                 git 'https://github.com/sumeetpatanker08/Jenkins_git.git'
-                bat 'python app.py'
+                bat 'python Code.py'
             }
         }
         stage('Build Image'){
